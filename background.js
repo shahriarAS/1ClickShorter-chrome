@@ -8,8 +8,13 @@ chrome.runtime.onInstalled.addListener(function () {
   });
 });
 
-chrome.contextMenus.onClicked.addListener(() => {
-  alert("sfsd");
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId == "shorten-url"){
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ["content.js"],
+    });
+  }
 });
 
 chrome.action.onClicked.addListener(async (tab) => {

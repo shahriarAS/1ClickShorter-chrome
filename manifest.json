@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author":"shovonshahriar01@gmail.com",
   "description": "1 Click Shorter: Click and convert your current tab URL to a shorter one.",
-  "homepage_url": "https://github.com/shahriar-programmer/1ClickShorter",
+  "homepage_url": "https://github.com/shahriarAS/1ClickShorter",
   "manifest_version": 3,
   "minimum_chrome_version": "100",
   "icons": {

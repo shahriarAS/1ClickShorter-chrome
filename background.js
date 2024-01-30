@@ -9,7 +9,8 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId == "shorten-url"){
+  if (info.menuItemId == "shorten-url") {
+    chrome.storage.local.set({ currentURL: info.linkUrl });
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       files: ["content.js"],
@@ -18,6 +19,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 chrome.action.onClicked.addListener(async (tab) => {
+  chrome.storage.local.set({ currentURL: null });
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
     files: ["content.js"],
